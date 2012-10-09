@@ -1,4 +1,4 @@
-%define		gitver	f98fdc4d8a77497d1921e3dc26cab0e28abb92fc
+%define		gitver	%{nil}
 
 Summary:	SGI implementation of libGLU OpenGL library
 Name:		Mesa-GLU
@@ -8,8 +8,8 @@ Release:	0.%{gitver}.1
 Source:		http://cgit.freedesktop.org/mesa/glu/snapshot/glu-%{gitver}.tar.bz2
 %else
 Release:	1
-Source0:	ftp://ftp.freedesktop.org/pub/mesa/%{version}/MesaLib-%{version}.tar.gz
-# Source0-md5:	301e5674b574682b4bc6121136fe2b16
+Source0:	ftp://ftp.freedesktop.org/pub/mesa/glu/glu-%{version}.tar.gz
+# Source0-md5:	bbc57d4fe3bd3fb095bdbef6fcb977c4
 %endif
 License:	SGI Free Software License B v1.1
 Group:		X11/Libraries
@@ -43,7 +43,7 @@ Header files for SGI libGLU library.
 %if "%{gitver}" != "%{nil}"
 %setup -qn glu-%{gitver}
 %else
-%setup -q
+%setup -qn glu-%{version}
 %endif
 
 %build
