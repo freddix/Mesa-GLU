@@ -7,7 +7,7 @@ Version:	9.0.0
 Release:	0.%{gitver}.1
 Source:		http://cgit.freedesktop.org/mesa/glu/snapshot/glu-%{gitver}.tar.bz2
 %else
-Release:	1
+Release:	2
 Source0:	ftp://ftp.freedesktop.org/pub/mesa/glu/glu-%{version}.tar.gz
 # Source0-md5:	bbc57d4fe3bd3fb095bdbef6fcb977c4
 %endif
@@ -62,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_includedir}/GL/{[a-fh-np-wyz],gg,glf,glut}*.h
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
